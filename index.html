@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="utf-8">
+        <title>심플포트폴리오</title>
+        <link href="css/reset.css" rel="stylesheet"
+        type="text/css"/>
+        <link href="css/style.css" rel="stylesheet"
+        type="text/css"/>     
+        <script src="js/jquery.1.12.4.js"
+        type="text/javascript"></script>
+        <script
+        src="plugins/bxslider/js/jquery.bxslider.js"
+        type="text/javascript"></script>   
+        <link href="plugins/web-fonts-with-css/css/all.css" 
+        rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" 
+        rel="stylesheet">
+        <script>
+            $(document).ready(function(){
+              $('.slider').bxSlider({
+                  controls: false,
+                  pager: false,
+                  auto: true
+              });
+            });
+          </script>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="slider">
+            <div class="background__01"></div>
+            <div class="background__02"></div>
+            <div class="background__03"></div>
+        </div>
+        <div class="contents">
+            <p class="contents__name">Jang, Hee Jin</p>
+            <p class="contents__job">Student & Programmer</p>
+            <div class="contents__sns">
+                <ul class="contents__list">
+                    <li>
+                        <a href="https://github.com/heejin99" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/h_jin_ooo/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://heejin99.github.io" target="_blank">
+                            <i class="fab fa-blogger-b"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:wkdgmlwls30@naver.com">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
