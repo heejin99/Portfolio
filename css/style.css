@@ -1,88 +1,217 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+*{
+  font-family: 'Fjalla One', sans-serif;
+  box-sizing:border-box;
+}
+
 html, body {
-    width: 100%;
-    height: 100%;
+  overflow-y: hidden;
 }
-.bx-wrapper, .bx-viewport, .slider{
-    width: 100%;
-    height: 100%;
-}
-.background__01{
-    width: 100%;
-    height: 100%;
-    background: url("../images/a.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
+body {
+  /* height: 100vh; */
+  color: #fff;
+  position: relative;
 }
 
-.background__02{
-    width: 100%;
-    height: 100%;
-    background: url("../images/b.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
+.content .cnt01 {
+
+  background: linear-gradient(15deg, #00a9f1, #cf00f1);
+  overflow-y: hidden;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
-.background__03{
-    width: 100%;
-    height: 100%;
-    background: url("../images/c.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
+.content .cnt02 {
+  overflow-y: hidden;
+  height: 100vh;
+  overflow-x: hidden;
 }
-/* no repeat: 이미지를 반복하지 말라는 것이므로 탁한 검은색을 이용할 때는 사용 X */
-.overlay{
-    width: 100%;
-    height: 100%;
-    background: url("../images/16.png");
-    position: absolute;
-    top: 0;
-    z-index: 10;
-}
-/* absolute: 공중에 뜬 상태 */
-/* z-index: 10 - 0(기존값)보다 10이 더 크기때문에 위에 위치하게 된다. */
-
-.contents{
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 20;
-    text-align: center;
-    font-family: 'Do Hyeon', sans-serif;
+/* 첫번째 배경 */
+h1 {
+  font-weight: 100;
+  margin: 0;
+  padding: 60px;
+  text-transform: uppercase;
 }
 
-.contents__name{
-    font-size: 64px;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 25px;
+@media (max-width: 700px) {
+  h1 {
+      padding: 40px;
+      font-size: 100px;
+  }
+}
+/* 글씨 배경 */
+h1 span {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.65, 0.02, 0.23, 1);
+  transform: translate(20%, 100%);
+  font-size: 180px;
+  color: #fff;
+  line-height: 180px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.03em;
+  text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.1);
+}
+/* 애니메이션 배경 */
+h1 span:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-40%);
+  transition: transform 0.6s cubic-bezier(0.65, 0.02, 0.23, 1);
 }
 
-.contents__job{
-    font-size: 25px;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 50px;
+h1 span.row {
+  overflow: hidden;
+  line-height: 0.9;
+  display: block;
+  transform: none;
 }
 
-.contents__list {
-    font-size: 0;
+h1 span.row:before {
+  display: none;
 }
-.contents__list > li{
-    display: inline-block;
-    width: 52px;
-    height: 52px;
-    line-height: 52px;
-    /* line-height == height - 수직 중앙 정렬 */
-    border: 1px solid white;
-    border-radius: 50%;
-    font-size: 16px;
-    margin-right: 20px;
+
+h1 .animate {
+  transform: translate(0, 0);
 }
-.contents__list > li:last-child{
-    margin-right: 0;
+
+h1 .animate:before {
+  transform: translateY(100%);
 }
-.contents__list > li > a{
-    color: white;
+.content div h2 {
+  position: relative;
+  top: 5%;
+  text-align: center;
+  color:#000;
+  text-transform: uppercase;
+  font-size: 62px;
+  margin: 0;
+  line-height: 67px;
+  letter-spacing: 2px;
 }
-/* color: inherit; 부모가 갖고 있는 색을 상속해라 */
+
+.content div p{
+  position: relative;
+  /* transform: translate(-50%, -50%); */
+  top: 10%;
+  text-align: center;
+  /* left: 50%; */
+  letter-spacing: 2px;
+  line-height: 150%;
+  display: block;
+  color: #000;
+  font-size: 22px;
+}
+
+.sidenav {
+  height:100%;
+  width: 0;
+  position: fixed;
+  z-index:20;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition:0.5s ease-in-out;
+  /* padding-top: 60px; */
+}
+.sidenav a {
+  padding: 40px 20px 8px 40px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #000;
+  display: block;
+  transition: 0.2s ease-in-out;
+}
+/* ease-in-out : 효과가 천천히 나타났다가 천천히 사라짐 */
+.sidenav a:hover, .offcanvas a:focus {
+  color: #cf00f1;
+}
+.closebtn {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 36px !important;
+  margin-left: 0px;
+}
+.openmenu:hover {
+  color:#000;
+  transition:0.5s ease-in-out;
+}
+.openmenu {
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 25px;
+  cursor:pointer;
+  transition:0.5s ease-in-out;
+}
+.openmenu > i {
+  top: 20px;
+  font-size: 30px;
+}
+/* 미디어쿼리 적용 */
+@media screen and (max-height:450px) {
+  .sidenav {
+    padding-top:15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.content div h3 {
+  position: relative;
+  top: 15%;
+  text-align: center;
+  color:#000;
+  text-transform: uppercase;
+  font-size: 62px;
+  margin: 0;
+  line-height: 67px;
+  letter-spacing: 2px;
+}
+
+.content div h4{
+  position: relative;
+  top: 15%;
+  left: 6%;
+  letter-spacing: 2px;
+  line-height: 150%;
+  display: block;
+  color: #000;
+  font-size: 22px;
+}
+
+.content .container {
+  position: relative;
+  top: 15%;
+  width: 100%; /* Full width */
+  background-color: #ddd; /* Grey background */
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.container .javascript {
+  width: 76.4%; 
+  background-color: #04AA6D; 
+  margin-bottom: 10px;
+}
+
+.container .html {
+  width: 11.9%; 
+  background-color: #04AA6D; 
+}
